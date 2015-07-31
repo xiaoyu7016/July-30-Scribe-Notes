@@ -164,8 +164,12 @@ We can calculate the relative risk of dying for both men and women using the con
 > relative_risk = risk_male/risk_female
 > relative_risk
 
-Mathematically, this can be expressed as RR = P(Y=1 | X=1) / P(Y=1 | X=0). So the relative risk of perishing as a male onboard the Titanic is: RR = [(Men Perished)/(All Males)] / [(Females Perished)/(All Females)]
+Mathematically, this can be expressed as RR = P(Y=1 | X=1) / P(Y=1 | X=0). So the relative risk of perishing as a male onboard the Titanic is: RR = [(Men Perished)/(All Males)] / [(Females Perished)/(All Females)]  = 2.97. In other words, men were 3 times as likely to perish relative to women in the Titanic sinking.
 
-As a side note, the odds ratio could also be computed as the ratio of the odds, rather than the risks. This would be calculated as OR = [(Men Perished)/(Surviving Males)] / [(Females Perished)/(Surviving Females)]
+As a side note, the odds ratio could also be computed as the ratio of the odds, rather than the risks. This would be calculated as OR = [(Men Perished)/(Surviving Males)] / [(Females Perished)/(Surviving Females)] = 11.3
 
 Both of these measures are common in epidemeology, along with the absolute risk ratio.
+
+We can also compute relative risk easily in R by passing a table to the relrisk() function.
+> t1_shuffle = xtabs(~shuffle(sex) + survived, data=TitanicSurvival)
+> relrisk(t1_shuffle) 
