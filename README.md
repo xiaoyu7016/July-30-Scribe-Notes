@@ -28,6 +28,13 @@ Plots, graphs and other forms of data visualization can be utilized to make conv
 The following is a series of plots with commentary on their execution (for better or worse).
 
 Misleading axes violate the *truthfulness* of the data you are representing:
+![](https://cloud.githubusercontent.com/assets/13579628/8998562/c9150c30-36f4-11e5-8d5c-228726d24181.png)
 
-![](http://postimg.org/image/tpy7krknv/)
+As do percentages that don't add up...
+![](https://cloud.githubusercontent.com/assets/13579628/8998562/c9150c30-36f4-11e5-8d5c-228726d24181.png)
 
+... or even make sense.
+![](https://cloud.githubusercontent.com/assets/13579628/8998562/c9150c30-36f4-11e5-8d5c-228726d24181.png)
+
+Misleading axes violate the *truthfulness* of the data you are representing:
+![](https://cloud.githubusercontent.com/assets/13579628/8998562/c9150c30-36f4-11e5-8d5c-228726d24181.png)
