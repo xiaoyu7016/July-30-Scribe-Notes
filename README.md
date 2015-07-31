@@ -87,7 +87,69 @@ Exercises in R - Basic Plotting and Measures of Association
 ---------------------
 ####Additional Readings:
   - [Statistical Robustness](https://en.wikipedia.org/wiki/Robust_statistics)
-  - [Statistical Association](https://en.wikipedia.org/wiki/Association_(statistics)
+  - [Statistical Association](https://en.wikipedia.org/wiki/Association_(statistics))
   - [Pearson Correlation](https://en.wikipedia.org/wiki/Pearson_product-moment_correlation_coefficient)
-  - [Spearman Corrrelatio](https://en.wikipedia.org/wiki/Spearman%27s_rank_correlation_coefficient)
+  - [Spearman Correlation](https://en.wikipedia.org/wiki/Spearman%27s_rank_correlation_coefficient)
   - [Examples of simple plotting in R](http://www.harding.edu/fmccown/r/)
+
+#####Robustness
+A robust statistic is resistant to errors in the results, produced by deviations from assumptions[1] (e.g., of normality). This means that if the assumptions are only approximately met, the robust estimator will still have a reasonable efficiency, and reasonably small bias, as well as being asymptotically unbiased, meaning having a bias tending towards 0 as the sample size tends towards infinity.
+  - The median is a robust measure of central tendency, while the mean is not. The median has a breakdown point of 50%, while the mean has a breakdown point of 0% (a single large observation can throw it off).
+  - The median absolute deviation and interquartile range are robust measures of statistical dispersion, while the standard deviation is not.
+
+#####Getting into the R scripts
+
+First we'll load some useful libraries for plotting:
+> library(mosaic)
+> library(foreach)
+
+Now we'll read in the gpdgrowth.csv and print out the first 6 rows to get a sense of what we are working with.
+> gdpgrowth = read.csv('./data/gdpgrowth.csv', header=TRUE)
+> head(gdpgrowth)
+
+Suppose we want to plot the relationship between GDP growth rate and defense spending. Note the attributes for labeling axes.
+
+> plot(gdpgrowth$DEF60, gdpgrowth$GR6096,
+>	pch=19, col='grey',
+>	xlab='Fraction GDP spent on national defense (1960)',
+>	ylab='GDP growth rate, 1960-1996')
+
+
+We could also use a boxplot to examine GDP growth in East Asian countries and other countries.
+> boxplot(GR6096 ~ EAST, data=gdpgrowth,
+> xlab='East Asian?',
+> ylab='GDP growth rate, 1960-1996')
+
+It's also possible to stratify by categorical variables using a lattice (or trellis) plot
+> xyplot(GR6096 ~ DEF60 | EAST, data=gdpgrowth)
+
+
+Go back to the scatterplot... Whoa! Who's the outlier? 
+> plot(gdpgrowth$DEF60, gdpgrowth$GR6096,
+> pch=19, col='grey',
+> xlab='Fraction GDP spent on national defense (1960)',
+> ylab='GDP growth rate, 1960-1996')
+
+We can select points in R plots and allow R to return information using identify(). Make sure to click on the point of interest.
+> outlier = identify(gdpgrowth$DEF60, gdpgrowth$GR6096, n=1)
+> gdpgrowth[outlier,]
+
+Jordan is probably having a large impact on the correlation of out chosen data. We can calculate the correlation using:
+> cor(gdpgrowth$DEF60, gdpgrowth$GR6096)
+
+Similiarly, we calculate the correlation without Jordan by calling our data set with [-outlier] applied.
+> cor(gdpgrowth$DEF60[-outlier], gdpgrowth$GR6096[-outlier])
+
+So, we can see that the Pearson Correlation is not robust; a single outlier value can dramatically impact the correlation that we calculate. What about a more robust measure of correlation - Spearman's rank correlation? We can apply the argument "method ='spearman'" to our cor() function to compute correlation by rank.
+
+> cor(gdpgrowth$DEF60, gdpgrowth$GR6096, method='spearman')
+> cor(gdpgrowth$DEF60[-outlier], gdpgrowth$GR6096[-outlier], method='spearman')
+
+Let's switch to the titanic survivor's dataset to get an understanding of contingency tables and relative risk.
+
+We have data on all passengers from the titanic, their age, gender, and status after the sinking accident.
+> library(mosaic)
+> TitanicSurvival = read.csv('./data/TitanicSurvival.csv')
+
+
+
