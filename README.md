@@ -23,6 +23,11 @@ Recommended Learning Tasks:
 Data Visualization: Plotting Do's and Dont's
 ---------------------
 
-Plots, graphs and other forms of data visualization can be utilized to make convoluted or confusing data quick and easy to understand. Plots of data should be used to make comparisons between related entities with *sufficient*, *truthful*, and *multivariate* relationships. The following is a series of plots with commentary on their execution (for better or worse).
+Plots, graphs and other forms of data visualization can be utilized to make convoluted or confusing data quick and easy to understand. Plots of data should be used to make comparisons between related entities with *sufficient*, *truthful*, and *multivariate* relationships. Good statistical graphics are vehicles for promoting accurate comparison, especially for large datasets that are not easy to understand intuitively. (This means no pie charts!)
 
+The following is a series of plots with commentary on their execution (for better or worse).
+
+Misleading axes violate the *truthfulness* of the data you are representing:
+
+[id]: http://postimg.org/image/tpy7krknv/  "That's a big difference. Or is it?"
 
