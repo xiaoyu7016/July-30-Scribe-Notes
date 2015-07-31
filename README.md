@@ -117,52 +117,52 @@ Suppose we want to plot the relationship between GDP growth rate and defense spe
 
 
 We could also use a boxplot to examine GDP growth in East Asian countries and other countries.
-> boxplot(GR6096 ~ EAST, data=gdpgrowth,
-> xlab='East Asian?',
-> ylab='GDP growth rate, 1960-1996')
+> boxplot(GR6096 ~ EAST, data=gdpgrowth,  
+> xlab='East Asian?',  
+> ylab='GDP growth rate, 1960-1996')  
 
 It's also possible to stratify by categorical variables using a lattice (or trellis) plot
-> xyplot(GR6096 ~ DEF60 | EAST, data=gdpgrowth)
+> xyplot(GR6096 ~ DEF60 | EAST, data=gdpgrowth)  
 
 
 Go back to the scatterplot... Whoa! Who's the outlier? 
-> plot(gdpgrowth$DEF60, gdpgrowth$GR6096,
-> pch=19, col='grey',
-> xlab='Fraction GDP spent on national defense (1960)',
-> ylab='GDP growth rate, 1960-1996')
+> plot(gdpgrowth$DEF60, gdpgrowth$GR6096,  
+> pch=19, col='grey',  
+> xlab='Fraction GDP spent on national defense (1960)',  
+> ylab='GDP growth rate, 1960-1996')  
 
 We can select points in R plots and allow R to return information using identify(). Make sure to click on the point of interest.
-> outlier = identify(gdpgrowth$DEF60, gdpgrowth$GR6096, n=1)
-> gdpgrowth[outlier,]
+> outlier = identify(gdpgrowth$DEF60, gdpgrowth$GR6096, n=1)  
+> gdpgrowth[outlier,]  
 
 Jordan is probably having a large impact on the correlation of out chosen data. We can calculate the correlation using:
-> cor(gdpgrowth$DEF60, gdpgrowth$GR6096)
+> cor(gdpgrowth$DEF60, gdpgrowth$GR6096)  
 
 Similiarly, we calculate the correlation without Jordan by calling our data set with [-outlier] applied.
-> cor(gdpgrowth$DEF60[-outlier], gdpgrowth$GR6096[-outlier])
+> cor(gdpgrowth$DEF60[-outlier], gdpgrowth$GR6096[-outlier])  
 
 So, we can see that the Pearson Correlation is not robust; a single outlier value can dramatically impact the correlation that we calculate. What about a more robust measure of correlation - Spearman's rank correlation? We can apply the argument "method ='spearman'" to our cor() function to compute correlation by rank.
 
-> cor(gdpgrowth$DEF60, gdpgrowth$GR6096, method='spearman')
-> cor(gdpgrowth$DEF60[-outlier], gdpgrowth$GR6096[-outlier], method='spearman')
+> cor(gdpgrowth$DEF60, gdpgrowth$GR6096, method='spearman')  
+> cor(gdpgrowth$DEF60[-outlier], gdpgrowth$GR6096[-outlier], method='spearman')  
 
 Let's switch to the titanic survivor's dataset to get an understanding of contingency tables and relative risk.
 
 We have data on all passengers from the titanic, their age, gender, and status after the sinking accident.
-> library(mosaic)
+> library(mosaic)  
 > TitanicSurvival = read.csv('./data/TitanicSurvival.csv')
 
 Of interest to us is the relationship between male and female survivor rates. We can use xtabs() to compute a contingency table, a type of table displaying the frequency distribution of variables.
-> t1 = xtabs(~sex + survived, data=TitanicSurvival)
-> t1
-> p1 = prop.table(t1, margin=1)
-> p1
+> t1 = xtabs(~sex + survived, data=TitanicSurvival)  
+> t1  
+> p1 = prop.table(t1, margin=1)  
+> p1  
 
 We can calculate the relative risk of dying for both men and women using the contingency table!
-> risk_female = p1[1,1]
-> risk_male = p1[2,1]
-> relative_risk = risk_male/risk_female
-> relative_risk
+> risk_female = p1[1,1]  
+risk_male = p1[2,1]  
+relative_risk = risk_male/risk_female  
+relative_risk
 
 Mathematically, this can be expressed as RR = P(Y=1 | X=1) / P(Y=1 | X=0). So the relative risk of perishing as a male onboard the Titanic is: RR = [(Men Perished)/(All Males)] / [(Females Perished)/(All Females)]  = 2.97. In other words, men were 3 times as likely to perish relative to women in the Titanic sinking.
 
@@ -171,5 +171,5 @@ As a side note, the odds ratio could also be computed as the ratio of the odds, 
 Both of these measures are common in epidemeology, along with the absolute risk ratio.
 
 We can also compute relative risk easily in R by passing a table to the relrisk() function.
-> t1_shuffle = xtabs(~shuffle(sex) + survived, data=TitanicSurvival)
-> relrisk(t1_shuffle) 
+> t1_shuffle = xtabs(~shuffle(sex) + survived, data=TitanicSurvival)  
+relrisk(t1_shuffle) 
