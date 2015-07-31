@@ -23,7 +23,7 @@ Module 1: Exploratory Analysis
 Data Visualization: Plotting Do's and Dont's
 ---------------------
 
-##Additional Readings:
+####Additional Readings:
   - [NYT 2014 Year in Interactive Storytelling](http://www.nytimes.com/interactive/2014/12/29/us/year-in-interactive-storytelling.html)
   - [An Interview with Edward Tufte](http://www.washingtonmonthly.com/magazine/mayjune_2011/features/the_information_sage029137.php?page=all)
   - [Typical projections in three dimensional space](https://en.wikipedia.org/wiki/Parallel_projection)
@@ -77,5 +77,11 @@ Another excellent example is Nicholas Felton's 'Annual Report' in which he docum
 
 ![](http://feltron.com/images/FAR13_04.jpg)
 
-####Chart Types
+####A Brief List of Chart Types
+- *Tables* are used to organize exact amounts of data and to display numerical information. Tables do not show visual comparisons. As a result, tables take longer to read and understand. It is more difficult to examine overall trends and make comparisons with tables, than it is with graphs.
+- *Line graphs* are used to display data or information that changes continuously over time. Line graphs allow us to see overall trends such as an increase or decrease in data over time.
+- *Bar graphs* are used to compare facts. The bars provide a visual display for comparing quantities in different categories or groups. Bar graphs help us to see relationships quickly. However, bar graphs can be difficult to read accurately. A change in the scale in a bar graph may alter one's visual perception of the data.
+- *Circle graphs* are used to compare the parts of a whole. Circle graphs represent data visually in the same proportion as the numerical data in a table: The area of each sector in a circle graph is in the same proportion to the whole circle as each item is to the total value in the table. Constructing an accurate circle graph is difficult to do without a computer. This is because you must first find each part of the whole through several elaborate calculations and then use a protractor to draw each angle. This leaves a lot of room for human error. Circle graphs are best used for displaying data when there are no more than five or six sectors, and when the values of each sector are different. Otherwise they can be difficult to read and understand.
 
+Exercises in R - Basic Plotting and Measures of Association
+---------------------
