@@ -39,7 +39,7 @@ There are elements common to all excellent statistical plots:
 - They imbue the viewer with understanding of a complex topic
 
 Most bad plots break the above rules and do the following:
-- Lack a clear comparison between variable
+- Lack a clear comparison between variables
 - Use insufficient quantities or qualities of data; i.e. the representation of the data is derived from a biased sample, cannot be reproduced or is simply too small to make accurate predictions
 - Misrepresent the truth; i.e. variations in values, omitted values, incorrect data, distortion of relative size, etc.
 - Are not meaningful, or offer no valuable insight 
