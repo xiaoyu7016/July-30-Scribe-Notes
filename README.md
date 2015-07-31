@@ -108,7 +108,7 @@ Now we'll read in the gpdgrowth.csv and print out the first 6 rows to get a sens
 > gdpgrowth = read.csv('./data/gdpgrowth.csv', header=TRUE)  
 head(gdpgrowth)
 
-Suppose we want to plot the relationship between GDP growth rate and defense spending. Note the attributes for labeling axes.
+Suppose we want to plot the relationship between GDP growth rate and defense spending. Note the arguments for labeling axes.
 
 > plot(gdpgrowth$DEF60, gdpgrowth$GR6096,
 	pch=19, col='grey',
@@ -146,9 +146,9 @@ So, we can see that the Pearson Correlation is not robust; a single outlier valu
 > cor(gdpgrowth$DEF60, gdpgrowth$GR6096, method='spearman')  
  cor(gdpgrowth$DEF60[-outlier], gdpgrowth$GR6096[-outlier], method='spearman')  
 
-Let's switch to the titanic survivor's dataset to get an understanding of contingency tables and relative risk.
+---------
 
-We have data on all passengers from the titanic, their age, gender, and status after the sinking accident.
+Let's switch to the titanic survivor's dataset to get an understanding of contingency tables and relative risk. We have data on all passengers from the titanic, their age, gender, and status after the sinking accident.
 > library(mosaic)  
  TitanicSurvival = read.csv('./data/TitanicSurvival.csv')
 
