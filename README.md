@@ -4,26 +4,26 @@
 Module 1: Exploratory Analysis
 ====================
 
-Required Files: 
+####Required Files: 
   - gdprowth.R
   - gdprowth.csv
   - titanic.R
   - TitanicSurvival.csv
 
-Recommended Readings:
+####Recommended Readings:
   - [a few introductory slides](notes/STA380intro.pdf)
   - [Jeff Leek's guide to sharing data](https://github.com/jtleek/datasharing)  
   - [Introduction to RMarkdown](http://rmarkdown.rstudio.com)  
   - [Introduction to GitHub](https://help.github.com/articles/set-up-git/) 
 
-Recommended Learning Tasks:
+####Recommended Learning Tasks:
   - Sign up for a github account
   - Clone the class repository
 
 Data Visualization: Plotting Do's and Dont's
 ---------------------
 
-Additional Readings:
+##Additional Readings:
   - [NYT 2014 Year in Interactive Storytelling](http://www.nytimes.com/interactive/2014/12/29/us/year-in-interactive-storytelling.html)
   - [An Interview with Edward Tufte](http://www.washingtonmonthly.com/magazine/mayjune_2011/features/the_information_sage029137.php?page=all)
   - [Typical projections in three dimensional space](https://en.wikipedia.org/wiki/Parallel_projection)
@@ -62,8 +62,10 @@ As do percentages that don't add up:
 ![](https://cloud.githubusercontent.com/assets/13579628/8998597/43e95a42-36f5-11e5-894f-63a69c669d91.png)
 
 Distorting relative sizes can be a real hazard in 3D respresentations (see reading listed under section heading):
+
 ![](https://cloud.githubusercontent.com/assets/13579628/8999032/2b4ddc06-36fa-11e5-8f52-eaf6ded33fe3.png)
-Plots should leverage human pattern recognition to simplify dense information, not make trivial comparisons. Low information density with a elaborate presentation is an example of chart junk.
+
+Plots should leverage human pattern recognition to simplify dense information, not make trivial comparisons. Low information density with a elaborate presentation is an example of chart junk:
 
 ![](https://cloud.githubusercontent.com/assets/13579628/8999034/3896d872-36fa-11e5-88c7-0386908542fa.png)
 
@@ -71,8 +73,9 @@ Compare what we've seen so far to one of the most famous information graphics in
 
 ![](https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Minard.png/1920px-Minard.png)
 
-Another excellent example is Nicholas Feltron's 'Annual Report' in which he documents each year of his life in infographic form. (http://feltron.com/)
+Another excellent example is Nicholas Felton's 'Annual Report' in which he documents each year of his life in infographic form. (http://feltron.com/)
 
 ![](http://feltron.com/images/FAR13_04.jpg)
 
+####Chart Types
 
