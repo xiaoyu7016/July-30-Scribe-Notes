@@ -101,25 +101,25 @@ A robust statistic is resistant to errors in the results, produced by deviations
 #####Getting into the R scripts (gdprowth.R and titanic.R)
 
 Let's start by looking at gdpgrowth. First we'll load some useful libraries for plotting:
-> library(mosaic)
-> library(foreach)
+> library(mosaic)  
+>library(foreach)
 
 Now we'll read in the gpdgrowth.csv and print out the first 6 rows to get a sense of what we are working with.
-> gdpgrowth = read.csv('./data/gdpgrowth.csv', header=TRUE)
-> head(gdpgrowth)
+> gdpgrowth = read.csv('./data/gdpgrowth.csv', header=TRUE)  
+head(gdpgrowth)
 
 Suppose we want to plot the relationship between GDP growth rate and defense spending. Note the attributes for labeling axes.
 
 > plot(gdpgrowth$DEF60, gdpgrowth$GR6096,
->	pch=19, col='grey',
->	xlab='Fraction GDP spent on national defense (1960)',
->	ylab='GDP growth rate, 1960-1996')
+	pch=19, col='grey',
+	xlab='Fraction GDP spent on national defense (1960)',
+	ylab='GDP growth rate, 1960-1996')
 
 
 We could also use a boxplot to examine GDP growth in East Asian countries and other countries.
 > boxplot(GR6096 ~ EAST, data=gdpgrowth,  
-> xlab='East Asian?',  
-> ylab='GDP growth rate, 1960-1996')  
+ xlab='East Asian?',  
+ ylab='GDP growth rate, 1960-1996')  
 
 It's also possible to stratify by categorical variables using a lattice (or trellis) plot
 > xyplot(GR6096 ~ DEF60 | EAST, data=gdpgrowth)  
@@ -127,13 +127,13 @@ It's also possible to stratify by categorical variables using a lattice (or trel
 
 Go back to the scatterplot... Whoa! Who's the outlier? 
 > plot(gdpgrowth$DEF60, gdpgrowth$GR6096,  
-> pch=19, col='grey',  
-> xlab='Fraction GDP spent on national defense (1960)',  
-> ylab='GDP growth rate, 1960-1996')  
+ pch=19, col='grey',  
+ xlab='Fraction GDP spent on national defense (1960)',  
+ ylab='GDP growth rate, 1960-1996')  
 
 We can select points in R plots and allow R to return information using identify(). Make sure to click on the point of interest.
 > outlier = identify(gdpgrowth$DEF60, gdpgrowth$GR6096, n=1)  
-> gdpgrowth[outlier,]  
+ gdpgrowth[outlier,]  
 
 Jordan is probably having a large impact on the correlation of out chosen data. We can calculate the correlation using:
 > cor(gdpgrowth$DEF60, gdpgrowth$GR6096)  
@@ -144,23 +144,23 @@ Similiarly, we calculate the correlation without Jordan by calling our data set 
 So, we can see that the Pearson Correlation is not robust; a single outlier value can dramatically impact the correlation that we calculate. What about a more robust measure of correlation - Spearman's rank correlation? We can apply the argument "method ='spearman'" to our cor() function to compute correlation by rank.
 
 > cor(gdpgrowth$DEF60, gdpgrowth$GR6096, method='spearman')  
-> cor(gdpgrowth$DEF60[-outlier], gdpgrowth$GR6096[-outlier], method='spearman')  
+ cor(gdpgrowth$DEF60[-outlier], gdpgrowth$GR6096[-outlier], method='spearman')  
 
 Let's switch to the titanic survivor's dataset to get an understanding of contingency tables and relative risk.
 
 We have data on all passengers from the titanic, their age, gender, and status after the sinking accident.
 > library(mosaic)  
-> TitanicSurvival = read.csv('./data/TitanicSurvival.csv')
+ TitanicSurvival = read.csv('./data/TitanicSurvival.csv')
 
 Of interest to us is the relationship between male and female survivor rates. We can use xtabs() to compute a contingency table, a type of table displaying the frequency distribution of variables.
 > t1 = xtabs(~sex + survived, data=TitanicSurvival)  
-> t1  
-> p1 = prop.table(t1, margin=1)  
-> p1  
+ t1  
+ p1 = prop.table(t1, margin=1)  
+ p1  
 
 We can calculate the relative risk of dying for both men and women using the contingency table!
-> risk_female = p1[1,1]  
-risk_male = p1[2,1]  
+> risk_female = p1[1,1]   
+risk_male = p1[2,1]   
 relative_risk = risk_male/risk_female  
 relative_risk
 
