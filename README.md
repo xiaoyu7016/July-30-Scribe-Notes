@@ -29,6 +29,5 @@ The following is a series of plots with commentary on their execution (for bette
 
 Misleading axes violate the *truthfulness* of the data you are representing:
 
-[1]: http://postimg.org/image/tpy7krknv/  "That's a big difference. Or is it?"
-![That's a big difference. Or is it?][1]
+![](http://postimg.org/image/tpy7krknv/)
 
