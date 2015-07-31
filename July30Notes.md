@@ -68,7 +68,7 @@ Plots should leverage human pattern recognition to simplify dense information, n
 
 ![](https://cloud.githubusercontent.com/assets/13579628/8999034/3896d872-36fa-11e5-88c7-0386908542fa.png)
 
-Compare what we've seen so far to one of the most famous information graphics in history, French civil engineer Joseph Minard's *Carte figurative des pertes successives en hommes de l'Armée Française dans la campagne de Russie 1812-1813*. This hand-drawn combination of map and Sankey Diagram contains information on the path of Napoleon's Grande Armée, major battle locations and dates, the strength of his forces, and the air temperature. One can easily understand the terrible nature of events leading to the loss of over 95% of Napoleon's forces.
+Compare what we've seen so far to one of the most famous information graphics in history, French civil engineer Joseph Minard's *Carte figurative des pertes successives en hommes de l'Armée Française dans la campagne de Russie 1812-1813*. This hand-drawn combination of map and Sankey Diagram contains information on the path of Napoleon's Grande Armée, major battle locations and dates, the strength of his forces, and the air temperature. One can easily understand the terrible nature of events leading to the loss of over 97% of Napoleon's forces.
 
 ![](https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Minard.png/1920px-Minard.png)
 
