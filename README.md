@@ -26,9 +26,19 @@ Data Visualization: Plotting Do's and Dont's
 Additional Readings:
   - [NYT 2014 Year in Interactive Storytelling](http://www.nytimes.com/interactive/2014/12/29/us/year-in-interactive-storytelling.html)
   - [An Interview with Edward Tufte](http://www.washingtonmonthly.com/magazine/mayjune_2011/features/the_information_sage029137.php?page=all)
+  - [Typical projections in three dimensional space](https://en.wikipedia.org/wiki/Parallel_projection)
 
   
 Plots, graphs and other forms of data visualization can be utilized to make convoluted or confusing data quick and easy to understand. Plots of data should be used to make comparisons between related entities with *sufficient*, *truthful*, and *multivariate* relationships. Good statistical graphics are vehicles for promoting accurate comparison, especially for large datasets that are not easy to understand intuitively. (This means no pie charts!)
+
+There are elements common to all excellent statistical plots:
+- Simple numbers for simple data
+- Truthful in magnitude
+- No excessive 'chart junk'
+- A meaningful, compelling display of multivariate data
+
+
+
 
 The following is a series of plots with commentary on their execution (for better or worse).
 
@@ -48,10 +58,12 @@ Plots should leverage human pattern recognition to simplify dense information, n
 
 ![](https://cloud.githubusercontent.com/assets/13579628/8998562/c9150c30-36f4-11e5-8d5c-228726d24181.png)
 
-Compare what we've seen so far to one of the most famous information graphics in history, French civil engineer Joseph Minard's *Carte figurative des pertes successives en hommes de l'Armée Française dans la campagne de Russie 1812-1813*. This hand-drawn combination of map and Sankey Diagram contains information on the path of Napoleon's Grande Armée, major battlefields, the strength of his forces, and the air temperature. One can easily understand the terrible nature of events leading to the loss of over 95% of Napoleon's forces.
+Compare what we've seen so far to one of the most famous information graphics in history, French civil engineer Joseph Minard's *Carte figurative des pertes successives en hommes de l'Armée Française dans la campagne de Russie 1812-1813*. This hand-drawn combination of map and Sankey Diagram contains information on the path of Napoleon's Grande Armée, major battle locations and dates, the strength of his forces, and the air temperature. One can easily understand the terrible nature of events leading to the loss of over 95% of Napoleon's forces.
 
 ![](https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Minard.png/1920px-Minard.png)
 
 Another excellent example is Nicholas Feltron's 'Annual Report' in which he documents each year of his life in infographic form. (http://feltron.com/)
 
 ![](http://feltron.com/images/FAR13_04.jpg)
+
+
