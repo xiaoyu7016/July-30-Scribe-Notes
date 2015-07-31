@@ -85,3 +85,9 @@ Another excellent example is Nicholas Felton's 'Annual Report' in which he docum
 
 Exercises in R - Basic Plotting and Measures of Association
 ---------------------
+####Additional Readings:
+  - [Statistical Robustness](https://en.wikipedia.org/wiki/Robust_statistics)
+  - [Statistical Association](https://en.wikipedia.org/wiki/Association_(statistics)
+  - [Pearson Correlation](https://en.wikipedia.org/wiki/Pearson_product-moment_correlation_coefficient)
+  - [Spearman Corrrelatio](https://en.wikipedia.org/wiki/Spearman%27s_rank_correlation_coefficient)
+  - [Examples of simple plotting in R](http://www.harding.edu/fmccown/r/)
