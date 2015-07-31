@@ -1,6 +1,5 @@
 # July-30-Scribe-Notes
 
-
 Module 1: Exploratory Analysis
 ====================
 
@@ -23,7 +22,7 @@ Module 1: Exploratory Analysis
 Data Visualization: Plotting Do's and Dont's
 ---------------------
 
-####Additional Readings:
+####Supplemental Materials:
   - [NYT 2014 Year in Interactive Storytelling](http://www.nytimes.com/interactive/2014/12/29/us/year-in-interactive-storytelling.html)
   - [An Interview with Edward Tufte](http://www.washingtonmonthly.com/magazine/mayjune_2011/features/the_information_sage029137.php?page=all)
   - [Typical projections in three dimensional space](https://en.wikipedia.org/wiki/Parallel_projection)
@@ -85,21 +84,23 @@ Another excellent example is Nicholas Felton's 'Annual Report' in which he docum
 
 Exercises in R - Basic Plotting and Measures of Association
 ---------------------
-####Additional Readings:
+####Supplemental Materials:
   - [Statistical Robustness](https://en.wikipedia.org/wiki/Robust_statistics)
   - [Statistical Association](https://en.wikipedia.org/wiki/Association_(statistics))
   - [Pearson Correlation](https://en.wikipedia.org/wiki/Pearson_product-moment_correlation_coefficient)
   - [Spearman Correlation](https://en.wikipedia.org/wiki/Spearman%27s_rank_correlation_coefficient)
   - [Examples of simple plotting in R](http://www.harding.edu/fmccown/r/)
+  - [Contingency Tables](http://onlinestatbook.com/2/chi_square/contingency.html)
+  - [Relative Risk](https://en.wikipedia.org/wiki/Relative_risk)
 
 #####Robustness
 A robust statistic is resistant to errors in the results, produced by deviations from assumptions[1] (e.g., of normality). This means that if the assumptions are only approximately met, the robust estimator will still have a reasonable efficiency, and reasonably small bias, as well as being asymptotically unbiased, meaning having a bias tending towards 0 as the sample size tends towards infinity.
   - The median is a robust measure of central tendency, while the mean is not. The median has a breakdown point of 50%, while the mean has a breakdown point of 0% (a single large observation can throw it off).
   - The median absolute deviation and interquartile range are robust measures of statistical dispersion, while the standard deviation is not.
 
-#####Getting into the R scripts
+#####Getting into the R scripts (gdprowth.R and titanic.R)
 
-First we'll load some useful libraries for plotting:
+Let's start by looking at gdpgrowth. First we'll load some useful libraries for plotting:
 > library(mosaic)
 > library(foreach)
 
@@ -151,5 +152,20 @@ We have data on all passengers from the titanic, their age, gender, and status a
 > library(mosaic)
 > TitanicSurvival = read.csv('./data/TitanicSurvival.csv')
 
+Of interest to us is the relationship between male and female survivor rates. We can use xtabs() to compute a contingency table, a type of table displaying the frequency distribution of variables.
+> t1 = xtabs(~sex + survived, data=TitanicSurvival)
+> t1
+> p1 = prop.table(t1, margin=1)
+> p1
 
+We can calculate the relative risk of dying for both men and women using the contingency table!
+> risk_female = p1[1,1]
+> risk_male = p1[2,1]
+> relative_risk = risk_male/risk_female
+> relative_risk
 
+Mathematically, this can be expressed as RR = P(Y=1 | X=1) / P(Y=1 | X=0). So the relative risk of perishing as a male onboard the Titanic is: RR = [(Men Perished)/(All Males)] / [(Females Perished)/(All Females)]
+
+As a side note, the odds ratio could also be computed as the ratio of the odds, rather than the risks. This would be calculated as OR = [(Men Perished)/(Surviving Males)] / [(Females Perished)/(Surviving Females)]
+
+Both of these measures are common in epidemeology, along with the absolute risk ratio.
