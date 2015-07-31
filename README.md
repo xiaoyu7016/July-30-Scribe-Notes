@@ -62,12 +62,10 @@ As do percentages that don't add up:
 ![](https://cloud.githubusercontent.com/assets/13579628/8998597/43e95a42-36f5-11e5-894f-63a69c669d91.png)
 
 Distorting relative sizes can be a real hazard in 3D respresentations (see reading listed under section heading):
-
-![](https://cloud.githubusercontent.com/assets/13579628/8998562/c9150c30-36f4-11e5-8d5c-228726d24181.png)
-
+![](https://cloud.githubusercontent.com/assets/13579628/8999032/2b4ddc06-36fa-11e5-8f52-eaf6ded33fe3.png)
 Plots should leverage human pattern recognition to simplify dense information, not make trivial comparisons. Low information density with a elaborate presentation is an example of chart junk.
 
-![](https://cloud.githubusercontent.com/assets/13579628/8998562/c9150c30-36f4-11e5-8d5c-228726d24181.png)
+![](https://cloud.githubusercontent.com/assets/13579628/8999034/3896d872-36fa-11e5-88c7-0386908542fa.png)
 
 Compare what we've seen so far to one of the most famous information graphics in history, French civil engineer Joseph Minard's *Carte figurative des pertes successives en hommes de l'Armée Française dans la campagne de Russie 1812-1813*. This hand-drawn combination of map and Sankey Diagram contains information on the path of Napoleon's Grande Armée, major battle locations and dates, the strength of his forces, and the air temperature. One can easily understand the terrible nature of events leading to the loss of over 95% of Napoleon's forces.
 
